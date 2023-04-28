@@ -9,6 +9,6 @@ const db = mongoose.connection
 db.on('error', (error) => console.error(error))
 db.once('open', () => console.log('Connected to Database'))
 app.use(express.json())
-// const hallsRouter = require('./routes/halls');
-// app.use('/halls' ,hallsRouter);
+const hallsRouter = require('./routes/halls')
+app.use('/halls' , hallsRouter)
 app.listen(3000 , () => console.log('server started'))

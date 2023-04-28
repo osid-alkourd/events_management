@@ -1,0 +1,28 @@
+GET http://localhost:3000/halls
+
+###
+
+
+POST http://localhost:3000/halls
+Content-Type: application/json
+
+{
+    "name": "first hall" , 
+    "building": "first building" , 
+    "absorptiveCapacity": 50
+
+}
+
+###
+
+PATCH http://localhost:3000/halls/644c212220d6a307bcd95554
+Content-Type: application/json
+
+{
+    "name": "First Hall"
+}
+
+
+### 
+
+DELETE http://localhost:3000/halls/644c212220d6a307bcd95554
