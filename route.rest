@@ -1,7 +1,5 @@
 GET http://localhost:3000/halls
-
 ###
-
 
 POST http://localhost:3000/halls
 Content-Type: application/json
@@ -10,9 +8,7 @@ Content-Type: application/json
     "name": "first hall" , 
     "building": "first building" , 
     "absorptiveCapacity": 50
-
 }
-
 ###
 
 PATCH http://localhost:3000/halls/644c212220d6a307bcd95554
@@ -21,8 +17,44 @@ Content-Type: application/json
 {
     "name": "First Hall"
 }
-
-
 ### 
 
 DELETE http://localhost:3000/halls/644c212220d6a307bcd95554
+###
+
+
+
+
+// the events request
+
+
+GET http://localhost:3000/events
+###
+
+POST http://localhost:3000/events
+Content-Type: application/json
+
+{
+    "name": "first event" , 
+    "attendeesNumber": 20 , 
+    "hallId": "644d6233cf794a2f05cbf006" , 
+    "description": "osid osid osid" , 
+    "Date": "5/1/2023" , 
+    "startTime": 1 , 
+    "endTime": 2
+}
+###
+
+DELETE http://localhost:3000/events/64502ad4d03c849091ece709
+###
+
+PUT  http://localhost:3000/events/64502cc47f40343c42611f7a
+Content-Type: application/json
+
+{
+    "name": "First Event",
+    "Date": "5/1/2023",
+    "hallId": "644d6233cf794a2f05cbf006",
+    "description": "mohab osid osid",
+    "attendeesNumber": 20 
+}

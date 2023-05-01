@@ -6,7 +6,7 @@ const eventsSchema = new mongoose.Schema({
       },
     Date: {
         type: Date,
-        required: true
+        required: true , 
     },
     attendeesNumber: {
          type: Number,
@@ -25,12 +25,12 @@ const eventsSchema = new mongoose.Schema({
 
     startTime: {
         type: Date , 
-        required: true
+        required: true , 
     } , 
     
     endTime: {
         type: Date , 
-        required: true
+        required: true , 
     } , 
 
     created_at: {
