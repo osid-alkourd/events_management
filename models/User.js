@@ -20,3 +20,5 @@ const userSchema = new mongoose.Schema({
         min: 6 ,
     }
 })
+
+module.exports = mongoose.model('users',userSchema)
