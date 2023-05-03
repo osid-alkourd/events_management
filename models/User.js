@@ -18,6 +18,9 @@ const userSchema = new mongoose.Schema({
         required: true,
         max: 50 , 
         min: 6 ,
+    } , 
+    token: {
+        type:String
     }
 })
 

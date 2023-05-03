@@ -14,9 +14,11 @@ app.use(express.json())
 // call routes module
 const hallsRouter = require('./routes/halls')
 const eventsRouter = require('./routes/events')
+const usersRouter = require('./routes/users')
 
 app.use('/halls' , hallsRouter)
 app.use('/events' , eventsRouter)
+app.use('/users' , usersRouter)
 
 app.listen(3000 , () => console.log('server started'))
 
