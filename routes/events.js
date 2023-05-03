@@ -3,9 +3,13 @@ const router = express.Router()
 const mongoose = require('mongoose')
 const Event = require('../models/events')
 const Hall = require('../models/halls')
+//const app = express()
+const verifyToken = require('../middleware/verifyToken')
+
+//app.use(verifyToken)
 
 // fetch all events
-router.get('/' , async (req , res) => {
+router.get('/' ,  verifyToken   , async (req , res) => {
     try {
         const events = await Event.find()
         res.json(events)
@@ -15,7 +19,7 @@ router.get('/' , async (req , res) => {
 })
 
 // add new event
-router.post('/' , async (req , res) => {
+router.post('/' ,  verifyToken  ,async (req , res) => {
     const start_time = new Date().setHours(req.body.startTime)
     const end_time = new Date().setHours(req.body.endTime) 
     const date = req.body.Date 
@@ -51,7 +55,7 @@ router.post('/' , async (req , res) => {
 
 
 // update specific event
-router.put('/:id' , async (req , res) => {
+router.put('/:id' ,  verifyToken   , async (req , res) => {
     const id = req.params.id 
     const event = await Event.findById(id)
     let hallId = new mongoose.Types.ObjectId(req.body.hallId);
@@ -75,7 +79,7 @@ router.put('/:id' , async (req , res) => {
 
 
 // delete event
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', verifyToken , async (req, res) => {
     try {
         const event = await Event.findByIdAndDelete(req.params.id)
         if(!event){

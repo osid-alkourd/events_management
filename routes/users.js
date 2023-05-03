@@ -51,7 +51,7 @@ router.post('/login' , async (req , res) => {
   if(!validPass) return res.status(401).send('Invalid password')
   const token = jwt.sign({_id: user._id} , process.env.TOKEN_SECRET)
   user.token = token
-  return res.header('auth-token' , token).status(200).send({user})
+   res.header('auth-token' , token).status(200).send({user})
 })
 
 // delete specific user

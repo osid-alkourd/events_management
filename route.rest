@@ -1,8 +1,11 @@
 GET http://localhost:3000/halls
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUyNTllNzM2MzlkMzdmYjg2N2NjZDEiLCJpYXQiOjE2ODMxMjQzMjN9.CSRxlEDMwsz-t2p5Yy0HbrtzWL19uNH7GUMusnn8Gbw
 ###
 
 POST http://localhost:3000/halls
 Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUyNTllNzM2MzlkMzdmYjg2N2NjZDEiLCJpYXQiOjE2ODMxMjQzMjN9.CSRxlEDMwsz-t2p5Yy0HbrtzWL19uNH7GUMusnn8Gbw
+
 
 {
     "name": "first hall" , 
@@ -11,15 +14,19 @@ Content-Type: application/json
 }
 ###
 
-PATCH http://localhost:3000/halls/644c212220d6a307bcd95554
+PATCH http://localhost:3000/halls/64527e24b42e34f397c20bb0
 Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUyNTllNzM2MzlkMzdmYjg2N2NjZDEiLCJpYXQiOjE2ODMxMjQzMjN9.CSRxlEDMwsz-t2p5Yy0HbrtzWL19uNH7GUMusnn8Gbw
+
 
 {
-    "name": "First Hall"
+    "name": "bbbb Hall"
 }
 ### 
 
-DELETE http://localhost:3000/halls/644c212220d6a307bcd95554
+DELETE http://localhost:3000/halls/64527e24b42e34f397c20bb0
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUyNTllNzM2MzlkMzdmYjg2N2NjZDEiLCJpYXQiOjE2ODMxMjQzMjN9.CSRxlEDMwsz-t2p5Yy0HbrtzWL19uNH7GUMusnn8Gbw
+
 ###
 
 
@@ -29,13 +36,15 @@ DELETE http://localhost:3000/halls/644c212220d6a307bcd95554
 
 
 GET http://localhost:3000/events
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUyNTllNzM2MzlkMzdmYjg2N2NjZDEiLCJpYXQiOjE2ODMxMjQzMjN9.CSRxlEDMwsz-t2p5Yy0HbrtzWL19uNH7GUMusnn8Gbw
 ###
 
 POST http://localhost:3000/events
 Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUyNTllNzM2MzlkMzdmYjg2N2NjZDEiLCJpYXQiOjE2ODMxMjQzMjN9.CSRxlEDMwsz-t2p5Yy0HbrtzWL19uNH7GUMusnn8Gbw
 
 {
-    "name": "first event" , 
+    "name": "thired event" , 
     "attendeesNumber": 20 , 
     "hallId": "644d6233cf794a2f05cbf006" , 
     "description": "osid osid osid" , 
@@ -45,14 +54,16 @@ Content-Type: application/json
 }
 ###
 
-DELETE http://localhost:3000/events/64502ad4d03c849091ece709
+DELETE http://localhost:3000/events/645280220373fb54f781226e
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUyNTllNzM2MzlkMzdmYjg2N2NjZDEiLCJpYXQiOjE2ODMxMjQzMjN9.CSRxlEDMwsz-t2p5Yy0HbrtzWL19uNH7GUMusnn8Gbw
 ###
 
 PUT  http://localhost:3000/events/64502cc47f40343c42611f7a
 Content-Type: application/json
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUyNTllNzM2MzlkMzdmYjg2N2NjZDEiLCJpYXQiOjE2ODMxMjQzMjN9.CSRxlEDMwsz-t2p5Yy0HbrtzWL19uNH7GUMusnn8Gbw
 
 {
-    "name": "First Event",
+    "name": "bvc Event",
     "Date": "5/1/2023",
     "hallId": "644d6233cf794a2f05cbf006",
     "description": "mohab osid osid",

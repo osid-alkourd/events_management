@@ -1,9 +1,10 @@
 const express = require('express')
 const router = express.Router()
 const Hall = require('../models/halls')
+const verifyToken = require('../middleware/verifyToken')
 
 // Getting all halls
-router.get('/' , async (req , res) => {
+router.get('/' , verifyToken , async (req , res) => {
     try {
         const halls = await Hall.find()
         res.json(halls)
@@ -13,7 +14,7 @@ router.get('/' , async (req , res) => {
 })
 
 // add new hall
-router.post('/' , async (req , res) => {
+router.post('/' , verifyToken , async (req , res) => {
     const hall = new Hall({
        name: req.body.name , 
        Building: req.body.building , 
@@ -29,7 +30,7 @@ router.post('/' , async (req , res) => {
 
 
 // update specific hall
-router.patch('/:id', getHall, async (req, res) => {
+router.patch('/:id', verifyToken  , getHall,    async (req, res) => {
     if (req.body.name != null) {
       res.hall.name = req.body.name
     }
@@ -53,7 +54,7 @@ router.patch('/:id', getHall, async (req, res) => {
 
 
 // delete speocific hall
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', verifyToken  , async (req, res) => {
     try {
       const hall = await Hall.findByIdAndDelete(req.params.id)
       if(!hall){
