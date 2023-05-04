@@ -20,9 +20,11 @@ router.get('/' ,  verifyToken   , async (req , res) => {
 
 // add new event
 router.post('/' ,  verifyToken  ,async (req , res) => {
-    const start_time = new Date().setHours(req.body.startTime)
-    const end_time = new Date().setHours(req.body.endTime) 
-    const date = req.body.Date 
+    // const start_time = new Date().setHours(req.body.startTime)
+    // const end_time = new Date().setHours(req.body.endTime) 
+     const start_time = req.body.startTime;
+     const end_time = req.body.endTime
+    const date =   new Date(req.body.Date) 
     const event = new Event({
        name: req.body.name , 
        attendeesNumber: req.body.attendeesNumber ,
@@ -37,14 +39,17 @@ router.post('/' ,  verifyToken  ,async (req , res) => {
         const hall = await Hall.findById(hallId)
         if(hall){
             if(hall.absorptiveCapacity >= req.body.attendeesNumber){
-                
-               // let checkEvent = Event.findOne({Date: date , startTime: start_time})
+                 const checkEvent = await Event.findOne({
+                    Date: date , 
+                    startTime: {$gte: start_time} ,
+                    endTime:{$lte: end_time}
+                    });
+                    if(checkEvent)  return res.status(422).json({ message: "The time not suite" });
+
                 const newEvent = await  event.save();
                 return res.status(201).json(newEvent)
-                
             }
-            return res.status(422).json({ message: "The hall not suite" })
-               
+            return res.status(422).json({ message: "The hall not suite" }) 
         }
         return res.status(404).json({ message: "The hall not found" })
     }catch(err) {
@@ -92,3 +97,13 @@ router.delete('/:id', verifyToken , async (req, res) => {
   })
 
 module.exports = router
+
+ // Event.findOne({
+                //     Date: date , 
+                //     startTime: {$gte: req.body.start_time } ,
+                //     endTime:{$lte: req.body.end_time}
+                //     }).then((event) => {
+                //     if(event) return res.status(422).json({ message: "The time not suite" });
+                //   }).catch(err => {
+                //     return res.status(500).json({ message: "Internal server error" });
+                //  });

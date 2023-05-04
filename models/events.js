@@ -24,13 +24,17 @@ const eventsSchema = new mongoose.Schema({
     } , 
 
     startTime: {
-        type: Date , 
-        required: true , 
+        type: Number , 
+        required: true ,  
+        max: 24 , 
+        min: 1
     } , 
     
     endTime: {
-        type: Date , 
+        type: Number , 
         required: true , 
+        max: 24 , 
+        min:1
     } , 
 
     created_at: {
@@ -47,3 +51,13 @@ const eventsSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('events',eventsSchema)
+
+
+
+
+/*
+start     end
+2          3
+if(... >= 2 and .... <=3 ) // fail
+
+*/

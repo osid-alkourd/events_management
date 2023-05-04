@@ -49,12 +49,12 @@ auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUyNTllNzM2MzlkMzd
     "hallId": "644d6233cf794a2f05cbf006" , 
     "description": "osid osid osid" , 
     "Date": "5/1/2023" , 
-    "startTime": 1 , 
-    "endTime": 2
+    "startTime": 2 , 
+    "endTime": 3
 }
 ###
 
-DELETE http://localhost:3000/events/645280220373fb54f781226e
+DELETE http://localhost:3000/events/645438824014b57fe071a742
 auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDUyNTllNzM2MzlkMzdmYjg2N2NjZDEiLCJpYXQiOjE2ODMxMjQzMjN9.CSRxlEDMwsz-t2p5Yy0HbrtzWL19uNH7GUMusnn8Gbw
 ###
 
